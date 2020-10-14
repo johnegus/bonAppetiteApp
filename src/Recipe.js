@@ -1,6 +1,7 @@
 import React from 'react';
-import style from './recipe.module.css'
-const Recipe = ({title, calories, image, ingredients}) => {
+import style from './recipe.module.css';
+const Recipe = ({title, calories, image, ingredients, source}) => {
+// const rounded = Math.round(Number.parseInt({calories}));
     return(
         <div className={style.recipe}>
             <h1>{title}</h1>
@@ -9,7 +10,8 @@ const Recipe = ({title, calories, image, ingredients}) => {
                     <li>{ingredient.text}</li>
                 ))}
             </ol>
-            <p>{calories}</p>
+            <p>{calories} calories</p>
+            <p className={style.source}>Source: {source}</p>
             <img className={style.image} src={image} alt=""/>
         </div>
     );
