@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './recipe.module.css';
 const Recipe = ({title, calories, image, ingredients, source}) => {
-// const rounded = Math.round(Number.parseInt({calories}));
+// const rounded = Number.parseFloat({calories});
     return(
         <div className={style.recipe}>
             <h1>{title}</h1>
@@ -10,7 +10,7 @@ const Recipe = ({title, calories, image, ingredients, source}) => {
                     <li>{ingredient.text}</li>
                 ))}
             </ol>
-            <p>{calories} calories</p>
+            <p>{calories.toFixed(0)} calories</p>
             <p className={style.source}>Source: {source}</p>
             <img className={style.image} src={image} alt=""/>
         </div>
